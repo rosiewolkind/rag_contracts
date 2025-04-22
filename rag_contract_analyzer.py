@@ -4,7 +4,8 @@ import openai
 import faiss
 import numpy as np
 from typing import List
-from openai.embeddings_utils import get_embedding
+from utils.embeddings_utils import get_embedding
+
 
 # Config
 openai.api_key = st.secrets["OPENAI_API_KEY"]
