@@ -6,3 +6,6 @@ pdfplumber
 tiktoken
 numpy
 scipy
+matplotlib
+scikit-learn
+plotly

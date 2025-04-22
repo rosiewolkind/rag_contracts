@@ -39,11 +39,13 @@ def retrieve_relevant_chunks(index, query_text, all_chunks, top_k=5):
 
 # GPT-4 extraction
 def extract_parameters(context_chunks: List[str], new_contract_text: str):
+    separator = "\n---\n"             # no backslash in f‑string expression
+    joined_chunks = separator.join(context_chunks)
     prompt = f"""
 You are an AI trained to extract key details from contracts.
 
 Below are relevant context chunks from prior contracts:
-{'\n---\n'.join(context_chunks)}
+{joined_chunks}
 
 Now analyze the following contract and return the parameters as JSON:
 {new_contract_text}
