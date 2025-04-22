@@ -5,3 +5,4 @@ faiss-cpu
 pdfplumber
 tiktoken
 numpy
+scipy
