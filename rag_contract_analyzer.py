@@ -23,7 +23,7 @@ def chunk_text(text, chunk_size=500):
 
 # Embedding
 def embed_chunks(chunks: List[str]):
-    return [get_embedding(chunk, engine=EMBEDDING_MODEL) for chunk in chunks]
+    return [get_embedding(chunk, model=EMBEDDING_MODEL) for chunk in chunks]
 
 # FAISS vector store
 def create_faiss_index(embeddings: List[List[float]]):
@@ -33,7 +33,7 @@ def create_faiss_index(embeddings: List[List[float]]):
     return index
 
 def retrieve_relevant_chunks(index, query_text, all_chunks, top_k=5):
-    query_embedding = get_embedding(query_text, engine=EMBEDDING_MODEL)
+    query_embedding = get_embedding(query_text, model=EMBEDDING_MODEL)
     D, I = index.search(np.array([query_embedding]).astype("float32"), top_k)
     return [all_chunks[i] for i in I[0]]
 
