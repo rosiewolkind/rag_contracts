@@ -1,1 +1,7 @@
 
+streamlit
+openai
+faiss-cpu
+pdfplumber
+tiktoken
+numpy
